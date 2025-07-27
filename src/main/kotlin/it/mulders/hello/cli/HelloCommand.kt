@@ -5,10 +5,18 @@ import org.slf4j.LoggerFactory
 import picocli.CommandLine
 import kotlin.jvm.java
 
-@CommandLine.Command(name = "hello", description = ["Greet world"])
+@CommandLine.Command(name = "hello", mixinStandardHelpOptions = true, description = ["Greet someone"])
 class HelloCommand : Runnable {
+    @CommandLine.Parameters(
+        arity = "0..1",
+        description = ["Who to greet"],
+        defaultValue = "World",
+        paramLabel = "name"
+    )
+    lateinit var name: String
+
     override fun run() {
-        log.info("Hello, World!")
+        log.info("Hello, $name!")
     }
 
     companion object {
