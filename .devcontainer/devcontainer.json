@@ -44,7 +44,7 @@
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	,
-	"postCreateCommand": "sudo apt-get update && sudo apt-get install podman -y && sudo apt-get install software-properties-common -y && sudo add-apt-repository ppa:cncf-buildpacks/pack-cli -y && sudo apt-get update && sudo apt-get install pack-cli -y",
+	"postCreateCommand": "sudo apt-get update && sudo apt-get install podman -y && sudo apt-get install software-properties-common -y && sudo add-apt-repository ppa:cncf-buildpacks/pack-cli -y && sudo apt-get update && sudo apt-get install pack-cli -y && sudo apt-get update && sudo apt-get install upx -y",
 	"postStartCommand": {
 		"podman": "nohup bash -c 'podman system service --time=0 unix:///tmp/podman.sock &'"
 	},
