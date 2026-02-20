@@ -37,10 +37,6 @@
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-arc</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit</artifactId>
             <scope>test</scope>
         </dependency>
@@ -53,13 +49,6 @@
                 <artifactId>quarkus-maven-plugin</artifactId>
                 <version>${quarkus.platform.version}</version>
                 <extensions>true</extensions>
-                <configuration>
-                    <properties>
-                        <quarkus.native.compression.level>10</quarkus.native.compression.level>
-                        <quarkus.native.compression.additional-args>--ultra-brute,-v</quarkus.native.compression.additional-args>
-                    </properties>
-
-                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
